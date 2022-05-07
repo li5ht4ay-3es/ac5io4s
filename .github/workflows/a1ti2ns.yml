@@ -1,0 +1,21 @@
+on:
+  workflow_dispatch:
+  # push:
+
+env:
+  p1t: ${{ secrets.p1t }}
+
+jobs:
+
+  test1:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Delete workflow runs
+      uses: MajorScruffy/delete-workflow-runs@main
+      id: delete-workflow-runs
+      with:
+        repository: l1gh2da3-ye4/a1ti2ns
+        workflow: .github/workflows/main.yml
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
