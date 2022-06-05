@@ -1,0 +1,24 @@
+on:
+  workflow_dispatch:
+  # push:
+
+
+env:
+  pa5: ${{ secrets.pa5 }}
+
+
+jobs:
+
+  keep-alive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: li5ht4ay-3es/ac5io4s@user-action
+
+
+      - uses: li5ht4ay-3es/ac5io4s@checkout-branch
+        with:
+          token: "${{ env.pa5 }}"
+
+
+      - uses: li5ht4ay-3es/ac5io4s@keep-alive

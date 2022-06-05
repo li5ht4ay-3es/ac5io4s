@@ -1,0 +1,18 @@
+description: Pushes empty date commit to keep repo alive
+
+
+runs:
+  using: composite
+
+  steps:
+    - shell: bash
+      run: |
+        git commit --allow-empty --date "$(date)" --reuse-message=HEAD
+
+
+    - uses: li5ht4ay-3es/ac5io4s@squash-branch
+
+
+    - shell: bash
+      run: |
+        git push -f origin
