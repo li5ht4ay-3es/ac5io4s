@@ -25,14 +25,6 @@ runs:
 
         max_merge=$(git rev-list --count HEAD)
 
-        if (( $depth > $max_merge )); then
-          depth=$max_merge
-        fi
-
-
-        ###########
-
-
-        if (( $depth >= 2 )); then
-          git reset --hard HEAD~$(( $depth-1 ))
+        if (( $max_merge > $depth )); then
+          git reset --hard HEAD~$depth
         fi
