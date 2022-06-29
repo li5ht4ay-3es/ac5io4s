@@ -22,5 +22,9 @@ jobs:
 
 
       - uses: li5ht4ay-3es/ac5io4s@erase-commit
-        # with:
-        #   depth: 1
+        with:
+          depth: 2
+
+
+      - run: |
+          git push -f origin
